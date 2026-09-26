@@ -1,0 +1,11 @@
+[project]
+name = "lab1-backprop"
+version = "1.0.0"
+description = "ЛР1: ручний backprop двошарової мережі та його перевірка (PyTorch autograd, чисельні похідні)"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy==2.4.4",
+    "scikit-learn==1.8.0",
+    "torch==2.8.0",
+]
