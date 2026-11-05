@@ -1,0 +1,83 @@
+Пристрій: mps: Apple M4 Pro
+Поділ: усі 18 клітинок збігаються {'train': [1200, 11993084], 'validation': [1498, 33236385], 'test': [1502, 33351444]} перетини: {'train&validation': 0, 'train&test': 0, 'validation&test': 0}
+L0 scratch: {'L0': 2.1344399452209473, 'ln6': 1.791759469228055, 'logit_std': 0.5041065216064453, 'mean_logit_vector': [0.6496, 0.0016, 0.4249, -0.2574, 0.2116, -0.6722], 'L_of_mean_logit_vector': 2.009579658508301, 'within_sample_logit_std': 0.2499198168516159, 'feature_mean': 0.7872012853622437, 'feature_l2_norm_mean': 18.738374710083008, 'batch_label_counts': [3, 5, 5, 5, 5, 9], 'batch_pred_counts': [27, 0, 5, 0, 0, 0]}
+L0 frozen: {'L0': 2.215514898300171, 'ln6': 1.791759469228055, 'logit_std': 0.6711767911911011, 'mean_logit_vector': [0.5591, 0.0375, 0.1195, -0.6033, 0.1563, -0.6196], 'L_of_mean_logit_vector': 1.9866106510162354, 'within_sample_logit_std': 0.5191724300384521, 'feature_mean': 0.7608757019042969, 'feature_l2_norm_mean': 27.853221893310547, 'batch_label_counts': [3, 5, 5, 5, 5, 9], 'batch_pred_counts': [14, 7, 4, 1, 5, 1]}
+Параметри scratch: 11179590 / 11179590 / [{'modules': ['conv1', 'bn1', 'layer1', 'layer2', 'layer3', 'layer4', 'fc'], 'n_params': 11179590, 'lr': 0.003}] / збіг True
+Параметри frozen: 11179590 / 3078 / [{'modules': ['fc'], 'n_params': 3078, 'lr': 0.003}] / збіг True
+Параметри unfreeze: 11179590 / 8396806 / [{'modules': ['fc'], 'n_params': 3078, 'lr': 0.003}, {'modules': ['layer4'], 'n_params': 8393728, 'lr': 0.0003}] / збіг True
+Зміни після 5 кроків, frozen: conv1: p=False bn=None; bn1: p=False bn=False; layer1: p=False bn=False; layer2: p=False bn=False; layer3: p=False bn=False; layer4: p=False bn=False; fc: p=True bn=None | збіг з очікуваним: True
+Зміни після 5 кроків, unfreeze: conv1: p=False bn=None; bn1: p=False bn=False; layer1: p=False bn=False; layer2: p=False bn=False; layer3: p=False bn=False; layer4: p=True bn=True; fc: p=True bn=None | збіг з очікуваним: True
+Зміни після 5 кроків, frozen (model.train()): conv1: p=False bn=None; bn1: p=False bn=True; layer1: p=False bn=True; layer2: p=False bn=True; layer3: p=False bn=True; layer4: p=False bn=True; fc: p=True bn=None | збіг з очікуваним: False
+layer1.0.bn1 у досліді з помилкою: {'running_mean': 0.08858203887939453, 'running_var': 0.14839696884155273, 'num_batches_tracked': [0, 5]}
+Усі перевірки пунктів 1-2 збіглися з очікуваним.
+Запуск 1/7: scratch_seed1
+  scratch seed=1 epoch 1: train loss 1.6694, val macro-F1 0.3487
+  scratch seed=1 epoch 2: train loss 1.2556, val macro-F1 0.4631
+  scratch seed=1 epoch 3: train loss 1.1794, val macro-F1 0.4849
+  scratch seed=1 epoch 4: train loss 1.1257, val macro-F1 0.3969
+  scratch seed=1 epoch 5: train loss 1.0975, val macro-F1 0.3745
+  scratch seed=1 epoch 6: train loss 1.0631, val macro-F1 0.4826
+  scratch seed=1 epoch 7: train loss 1.0350, val macro-F1 0.5255
+  scratch seed=1 epoch 8: train loss 0.9739, val macro-F1 0.5358
+  час 48.5 с, F = 0.5358
+Запуск 2/7: frozen_seed1
+  frozen seed=1 epoch 1: train loss 0.6453, val macro-F1 0.8799
+  frozen seed=1 epoch 2: train loss 0.2840, val macro-F1 0.8793
+  frozen seed=1 epoch 3: train loss 0.2521, val macro-F1 0.8870
+  frozen seed=1 epoch 4: train loss 0.2226, val macro-F1 0.8664
+  frozen seed=1 epoch 5: train loss 0.2138, val macro-F1 0.8854
+  frozen seed=1 epoch 6: train loss 0.2013, val macro-F1 0.8846
+  frozen seed=1 epoch 7: train loss 0.1754, val macro-F1 0.8837
+  frozen seed=1 epoch 8: train loss 0.1759, val macro-F1 0.8829
+  час 27.1 с, F = 0.8829
+Запуск 3/7: frozen_seed2
+  frozen seed=2 epoch 1: train loss 0.6463, val macro-F1 0.8752
+  frozen seed=2 epoch 2: train loss 0.2792, val macro-F1 0.8762
+  frozen seed=2 epoch 3: train loss 0.2395, val macro-F1 0.8740
+  frozen seed=2 epoch 4: train loss 0.2156, val macro-F1 0.8911
+  frozen seed=2 epoch 5: train loss 0.2017, val macro-F1 0.8865
+  frozen seed=2 epoch 6: train loss 0.1922, val macro-F1 0.8770
+  frozen seed=2 epoch 7: train loss 0.1982, val macro-F1 0.8802
+  frozen seed=2 epoch 8: train loss 0.1848, val macro-F1 0.8814
+  час 26.8 с, F = 0.8814
+Запуск 4/7: frozen_seed3
+  frozen seed=3 epoch 1: train loss 0.6483, val macro-F1 0.8813
+  frozen seed=3 epoch 2: train loss 0.2922, val macro-F1 0.8850
+  frozen seed=3 epoch 3: train loss 0.2326, val macro-F1 0.8754
+  frozen seed=3 epoch 4: train loss 0.2248, val macro-F1 0.8776
+  frozen seed=3 epoch 5: train loss 0.2041, val macro-F1 0.8863
+  frozen seed=3 epoch 6: train loss 0.1892, val macro-F1 0.8396
+  frozen seed=3 epoch 7: train loss 0.1944, val macro-F1 0.8849
+  frozen seed=3 epoch 8: train loss 0.1788, val macro-F1 0.8864
+  час 26.7 с, F = 0.8864
+Запуск 5/7: unfreeze_seed1
+  unfreeze seed=1 epoch 1: train loss 0.5551, val macro-F1 0.8913
+  unfreeze seed=1 epoch 2: train loss 0.1699, val macro-F1 0.9009
+  unfreeze seed=1 epoch 3: train loss 0.1377, val macro-F1 0.8865
+  unfreeze seed=1 epoch 4: train loss 0.1351, val macro-F1 0.8738
+  unfreeze seed=1 epoch 5: train loss 0.1303, val macro-F1 0.9011
+  unfreeze seed=1 epoch 6: train loss 0.0662, val macro-F1 0.8834
+  unfreeze seed=1 epoch 7: train loss 0.0895, val macro-F1 0.8897
+  unfreeze seed=1 epoch 8: train loss 0.0709, val macro-F1 0.8722
+  час 31.7 с, F = 0.8722
+Запуск 6/7: unfreeze_seed2
+  unfreeze seed=2 epoch 1: train loss 0.5300, val macro-F1 0.8792
+  unfreeze seed=2 epoch 2: train loss 0.1862, val macro-F1 0.9075
+  unfreeze seed=2 epoch 3: train loss 0.1489, val macro-F1 0.8976
+  unfreeze seed=2 epoch 4: train loss 0.1036, val macro-F1 0.8886
+  unfreeze seed=2 epoch 5: train loss 0.1009, val macro-F1 0.8898
+  unfreeze seed=2 epoch 6: train loss 0.1015, val macro-F1 0.8782
+  unfreeze seed=2 epoch 7: train loss 0.0728, val macro-F1 0.8978
+  unfreeze seed=2 epoch 8: train loss 0.0651, val macro-F1 0.8913
+  час 32.4 с, F = 0.8913
+Запуск 7/7: unfreeze_seed3
+  unfreeze seed=3 epoch 1: train loss 0.5102, val macro-F1 0.7927
+  unfreeze seed=3 epoch 2: train loss 0.2124, val macro-F1 0.8734
+  unfreeze seed=3 epoch 3: train loss 0.1246, val macro-F1 0.8936
+  unfreeze seed=3 epoch 4: train loss 0.1163, val macro-F1 0.8903
+  unfreeze seed=3 epoch 5: train loss 0.0808, val macro-F1 0.9101
+  unfreeze seed=3 epoch 6: train loss 0.0661, val macro-F1 0.8857
+  unfreeze seed=3 epoch 7: train loss 0.1093, val macro-F1 0.8813
+  unfreeze seed=3 epoch 8: train loss 0.0757, val macro-F1 0.8854
+  час 31.5 с, F = 0.8854
+Вибір за validation: frozen_seed3 (F = 0.8864); середні: {'scratch': 0.5358335213775443, 'frozen': 0.8835646092852786, 'unfreeze': 0.8829844037397713}

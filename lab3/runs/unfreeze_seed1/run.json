@@ -1,0 +1,251 @@
+{
+  "run": 5,
+  "name": "unfreeze_seed1",
+  "seed": 1,
+  "regime": "unfreeze",
+  "config": {
+    "seed": 1,
+    "regime": "unfreeze",
+    "classes": [
+      "buildings",
+      "forest",
+      "glacier",
+      "mountain",
+      "sea",
+      "street"
+    ],
+    "transforms": {
+      "train": [
+        {
+          "name": "RandomResizedCrop",
+          "size": 160,
+          "scale": [
+            0.7,
+            1.0
+          ],
+          "ratio": [
+            0.75,
+            1.3333333333333333
+          ],
+          "interpolation": "bilinear",
+          "antialias": true
+        },
+        {
+          "name": "RandomHorizontalFlip",
+          "p": 0.5
+        },
+        {
+          "name": "ToTensor"
+        },
+        {
+          "name": "Normalize",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        }
+      ],
+      "validation_test": [
+        {
+          "name": "Resize",
+          "size": [
+            160,
+            160
+          ],
+          "interpolation": "bilinear",
+          "antialias": true
+        },
+        {
+          "name": "ToTensor"
+        },
+        {
+          "name": "Normalize",
+          "mean": [
+            0.485,
+            0.456,
+            0.406
+          ],
+          "std": [
+            0.229,
+            0.224,
+            0.225
+          ]
+        }
+      ],
+      "image_open": "PIL.Image.open(...).convert('RGB')"
+    },
+    "model": {
+      "arch": "torchvision.models.resnet18",
+      "weights": "ResNet18_Weights.IMAGENET1K_V1",
+      "fc": "torch.nn.Linear(512, 6), default init",
+      "trainable_modules": [
+        "layer4",
+        "fc"
+      ],
+      "eval_modules_during_training": [
+        "conv1",
+        "bn1",
+        "layer1",
+        "layer2",
+        "layer3"
+      ],
+      "total_params": 11179590,
+      "trainable_params": 8396806,
+      "batchnorm": {
+        "momentum": 0.1,
+        "eps": 1e-05
+      },
+      "build_order": [
+        "torch.manual_seed(seed); np.random.seed(seed)",
+        "resnet18(weights=W)",
+        "fc = Linear(512, 6)",
+        "requires_grad",
+        "to(device); AdamW"
+      ]
+    },
+    "optimizer": {
+      "name": "torch.optim.AdamW",
+      "param_groups": [
+        {
+          "lr": 0.003,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "weight_decay": 0.0001,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true,
+          "n_params": 3078
+        },
+        {
+          "lr": 0.0003,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "weight_decay": 0.0001,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": true,
+          "n_params": 8393728
+        }
+      ]
+    },
+    "loss": {
+      "name": "torch.nn.CrossEntropyLoss",
+      "reduction": "mean",
+      "label_smoothing": 0.0,
+      "weight": null
+    },
+    "training": {
+      "epochs": 8,
+      "steps_per_epoch": 38,
+      "total_steps": 304,
+      "train_loader": {
+        "batch_size": 32,
+        "shuffle": true,
+        "drop_last": false,
+        "num_workers": 0,
+        "generator": null,
+        "sampler": null
+      },
+      "eval_loader": {
+        "batch_size": 64,
+        "shuffle": false,
+        "num_workers": 0
+      },
+      "epoch_loss": "sum_b L_b*|b| / 1200 (loss before optimizer step)",
+      "val_metric": "sklearn f1_score(average='macro'), after every epoch",
+      "lr_schedule": null,
+      "grad_clip": null,
+      "amp": false,
+      "dtype": "float32",
+      "early_stopping": null,
+      "checkpoint_selection": "weights after epoch 8"
+    }
+  },
+  "git": {
+    "commit": "ac83ac3ec64b206aff4c641a762def8a62ebb5b1",
+    "uncommitted_changes": true
+  },
+  "split_csv_sha256": "d3a611aec41f6e335ab58287f10a443f3e0e35aa9adfefae662d48b15af567f9",
+  "env": {
+    "python": "3.12.10",
+    "torch": "2.8.0",
+    "torchvision": "0.23.0",
+    "numpy": "2.4.4",
+    "device": "mps: Apple M4 Pro",
+    "platform": "macOS-27.0.1-arm64-arm-64bit"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5551099574565888,
+      "val_macro_f1": 0.8912679328153983,
+      "last_batch_size": 16
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.1699143180747827,
+      "val_macro_f1": 0.9009212953486011,
+      "last_batch_size": 16
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.13765232486029466,
+      "val_macro_f1": 0.886531907642696,
+      "last_batch_size": 16
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.13510280536487698,
+      "val_macro_f1": 0.8738454446724296,
+      "last_batch_size": 16
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.1303177478040258,
+      "val_macro_f1": 0.9011348549886519,
+      "last_batch_size": 16
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.06624977494279544,
+      "val_macro_f1": 0.8834230195471559,
+      "last_batch_size": 16
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.08945793715616067,
+      "val_macro_f1": 0.8896903968868152,
+      "last_batch_size": 16
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.07092538780222336,
+      "val_macro_f1": 0.8721734966487263,
+      "last_batch_size": 16
+    }
+  ],
+  "optimizer_steps": 304,
+  "final_train_loss": 0.07092538780222336,
+  "final_val_macro_f1": 0.8721734966487263,
+  "train_time_s": 31.66430933399988
+}

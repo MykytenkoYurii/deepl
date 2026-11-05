@@ -1,0 +1,595 @@
+{
+  "split": {
+    "cells": [
+      {
+        "class": "buildings",
+        "part": "train",
+        "count": 200,
+        "sum": 1996761,
+        "expected": [
+          200,
+          1996761
+        ],
+        "match": true
+      },
+      {
+        "class": "buildings",
+        "part": "validation",
+        "count": 218,
+        "sum": 4837323,
+        "expected": [
+          218,
+          4837323
+        ],
+        "match": true
+      },
+      {
+        "class": "buildings",
+        "part": "test",
+        "count": 219,
+        "sum": 4837559,
+        "expected": [
+          219,
+          4837559
+        ],
+        "match": true
+      },
+      {
+        "class": "forest",
+        "part": "train",
+        "count": 200,
+        "sum": 2032625,
+        "expected": [
+          200,
+          2032625
+        ],
+        "match": true
+      },
+      {
+        "class": "forest",
+        "part": "validation",
+        "count": 237,
+        "sum": 5276962,
+        "expected": [
+          237,
+          5276962
+        ],
+        "match": true
+      },
+      {
+        "class": "forest",
+        "part": "test",
+        "count": 237,
+        "sum": 5291326,
+        "expected": [
+          237,
+          5291326
+        ],
+        "match": true
+      },
+      {
+        "class": "glacier",
+        "part": "train",
+        "count": 200,
+        "sum": 2183923,
+        "expected": [
+          200,
+          2183923
+        ],
+        "match": true
+      },
+      {
+        "class": "glacier",
+        "part": "validation",
+        "count": 276,
+        "sum": 6135652,
+        "expected": [
+          276,
+          6135652
+        ],
+        "match": true
+      },
+      {
+        "class": "glacier",
+        "part": "test",
+        "count": 277,
+        "sum": 6157250,
+        "expected": [
+          277,
+          6157250
+        ],
+        "match": true
+      },
+      {
+        "class": "mountain",
+        "part": "train",
+        "count": 200,
+        "sum": 1950345,
+        "expected": [
+          200,
+          1950345
+        ],
+        "match": true
+      },
+      {
+        "class": "mountain",
+        "part": "validation",
+        "count": 262,
+        "sum": 5789535,
+        "expected": [
+          262,
+          5789535
+        ],
+        "match": true
+      },
+      {
+        "class": "mountain",
+        "part": "test",
+        "count": 263,
+        "sum": 5849765,
+        "expected": [
+          263,
+          5849765
+        ],
+        "match": true
+      },
+      {
+        "class": "sea",
+        "part": "train",
+        "count": 200,
+        "sum": 1987613,
+        "expected": [
+          200,
+          1987613
+        ],
+        "match": true
+      },
+      {
+        "class": "sea",
+        "part": "validation",
+        "count": 255,
+        "sum": 5655068,
+        "expected": [
+          255,
+          5655068
+        ],
+        "match": true
+      },
+      {
+        "class": "sea",
+        "part": "test",
+        "count": 255,
+        "sum": 5668011,
+        "expected": [
+          255,
+          5668011
+        ],
+        "match": true
+      },
+      {
+        "class": "street",
+        "part": "train",
+        "count": 200,
+        "sum": 1841817,
+        "expected": [
+          200,
+          1841817
+        ],
+        "match": true
+      },
+      {
+        "class": "street",
+        "part": "validation",
+        "count": 250,
+        "sum": 5541845,
+        "expected": [
+          250,
+          5541845
+        ],
+        "match": true
+      },
+      {
+        "class": "street",
+        "part": "test",
+        "count": 251,
+        "sum": 5547533,
+        "expected": [
+          251,
+          5547533
+        ],
+        "match": true
+      }
+    ],
+    "all_match": true,
+    "overlaps": {
+      "train&validation": 0,
+      "train&test": 0,
+      "validation&test": 0
+    },
+    "unique_files": true,
+    "totals": {
+      "train": [
+        1200,
+        11993084
+      ],
+      "validation": [
+        1498,
+        33236385
+      ],
+      "test": [
+        1502,
+        33351444
+      ]
+    },
+    "split_sha256": "d3a611aec41f6e335ab58287f10a443f3e0e35aa9adfefae662d48b15af567f9"
+  },
+  "device": "mps: Apple M4 Pro",
+  "initial_loss": {
+    "scratch": {
+      "L0": 2.1344399452209473,
+      "ln6": 1.791759469228055,
+      "logit_std": 0.5041065216064453,
+      "mean_logit_vector": [
+        0.6496,
+        0.0016,
+        0.4249,
+        -0.2574,
+        0.2116,
+        -0.6722
+      ],
+      "L_of_mean_logit_vector": 2.009579658508301,
+      "within_sample_logit_std": 0.2499198168516159,
+      "feature_mean": 0.7872012853622437,
+      "feature_l2_norm_mean": 18.738374710083008,
+      "batch_label_counts": [
+        3,
+        5,
+        5,
+        5,
+        5,
+        9
+      ],
+      "batch_pred_counts": [
+        27,
+        0,
+        5,
+        0,
+        0,
+        0
+      ]
+    },
+    "frozen": {
+      "L0": 2.215514898300171,
+      "ln6": 1.791759469228055,
+      "logit_std": 0.6711767911911011,
+      "mean_logit_vector": [
+        0.5591,
+        0.0375,
+        0.1195,
+        -0.6033,
+        0.1563,
+        -0.6196
+      ],
+      "L_of_mean_logit_vector": 1.9866106510162354,
+      "within_sample_logit_std": 0.5191724300384521,
+      "feature_mean": 0.7608757019042969,
+      "feature_l2_norm_mean": 27.853221893310547,
+      "batch_label_counts": [
+        3,
+        5,
+        5,
+        5,
+        5,
+        9
+      ],
+      "batch_pred_counts": [
+        14,
+        7,
+        4,
+        1,
+        5,
+        1
+      ]
+    }
+  },
+  "params": [
+    {
+      "regime": "scratch",
+      "total": 11179590,
+      "trainable": 11179590,
+      "groups": [
+        {
+          "modules": [
+            "conv1",
+            "bn1",
+            "layer1",
+            "layer2",
+            "layer3",
+            "layer4",
+            "fc"
+          ],
+          "n_params": 11179590,
+          "lr": 0.003
+        }
+      ],
+      "frozen_params_in_optimizer": 0,
+      "optimizer_equals_trainable": true,
+      "match": true
+    },
+    {
+      "regime": "frozen",
+      "total": 11179590,
+      "trainable": 3078,
+      "groups": [
+        {
+          "modules": [
+            "fc"
+          ],
+          "n_params": 3078,
+          "lr": 0.003
+        }
+      ],
+      "frozen_params_in_optimizer": 0,
+      "optimizer_equals_trainable": true,
+      "match": true
+    },
+    {
+      "regime": "unfreeze",
+      "total": 11179590,
+      "trainable": 8396806,
+      "groups": [
+        {
+          "modules": [
+            "fc"
+          ],
+          "n_params": 3078,
+          "lr": 0.003
+        },
+        {
+          "modules": [
+            "layer4"
+          ],
+          "n_params": 8393728,
+          "lr": 0.0003
+        }
+      ],
+      "frozen_params_in_optimizer": 0,
+      "optimizer_equals_trainable": true,
+      "match": true
+    }
+  ],
+  "changes_frozen": {
+    "regime": "frozen",
+    "buggy_model_train": false,
+    "modules": [
+      {
+        "module": "conv1",
+        "params_changed": false,
+        "bn_stats_changed": null,
+        "num_batches_tracked_changed": null,
+        "expected_params": false,
+        "expected_bn": null,
+        "match": true
+      },
+      {
+        "module": "bn1",
+        "params_changed": false,
+        "bn_stats_changed": false,
+        "num_batches_tracked_changed": false,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": true
+      },
+      {
+        "module": "layer1",
+        "params_changed": false,
+        "bn_stats_changed": false,
+        "num_batches_tracked_changed": false,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": true
+      },
+      {
+        "module": "layer2",
+        "params_changed": false,
+        "bn_stats_changed": false,
+        "num_batches_tracked_changed": false,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": true
+      },
+      {
+        "module": "layer3",
+        "params_changed": false,
+        "bn_stats_changed": false,
+        "num_batches_tracked_changed": false,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": true
+      },
+      {
+        "module": "layer4",
+        "params_changed": false,
+        "bn_stats_changed": false,
+        "num_batches_tracked_changed": false,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": true
+      },
+      {
+        "module": "fc",
+        "params_changed": true,
+        "bn_stats_changed": null,
+        "num_batches_tracked_changed": null,
+        "expected_params": true,
+        "expected_bn": null,
+        "match": true
+      }
+    ],
+    "all_match": true,
+    "layer1.0.bn1_max_abs_change": {
+      "running_mean": 0.0,
+      "running_var": 0.0,
+      "num_batches_tracked": [
+        0,
+        0
+      ]
+    }
+  },
+  "changes_unfreeze": {
+    "regime": "unfreeze",
+    "buggy_model_train": false,
+    "modules": [
+      {
+        "module": "conv1",
+        "params_changed": false,
+        "bn_stats_changed": null,
+        "num_batches_tracked_changed": null,
+        "expected_params": false,
+        "expected_bn": null,
+        "match": true
+      },
+      {
+        "module": "bn1",
+        "params_changed": false,
+        "bn_stats_changed": false,
+        "num_batches_tracked_changed": false,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": true
+      },
+      {
+        "module": "layer1",
+        "params_changed": false,
+        "bn_stats_changed": false,
+        "num_batches_tracked_changed": false,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": true
+      },
+      {
+        "module": "layer2",
+        "params_changed": false,
+        "bn_stats_changed": false,
+        "num_batches_tracked_changed": false,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": true
+      },
+      {
+        "module": "layer3",
+        "params_changed": false,
+        "bn_stats_changed": false,
+        "num_batches_tracked_changed": false,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": true
+      },
+      {
+        "module": "layer4",
+        "params_changed": true,
+        "bn_stats_changed": true,
+        "num_batches_tracked_changed": true,
+        "expected_params": true,
+        "expected_bn": true,
+        "match": true
+      },
+      {
+        "module": "fc",
+        "params_changed": true,
+        "bn_stats_changed": null,
+        "num_batches_tracked_changed": null,
+        "expected_params": true,
+        "expected_bn": null,
+        "match": true
+      }
+    ],
+    "all_match": true,
+    "layer1.0.bn1_max_abs_change": {
+      "running_mean": 0.0,
+      "running_var": 0.0,
+      "num_batches_tracked": [
+        0,
+        0
+      ]
+    }
+  },
+  "bug_frozen": {
+    "regime": "frozen",
+    "buggy_model_train": true,
+    "modules": [
+      {
+        "module": "conv1",
+        "params_changed": false,
+        "bn_stats_changed": null,
+        "num_batches_tracked_changed": null,
+        "expected_params": false,
+        "expected_bn": null,
+        "match": true
+      },
+      {
+        "module": "bn1",
+        "params_changed": false,
+        "bn_stats_changed": true,
+        "num_batches_tracked_changed": true,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": false
+      },
+      {
+        "module": "layer1",
+        "params_changed": false,
+        "bn_stats_changed": true,
+        "num_batches_tracked_changed": true,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": false
+      },
+      {
+        "module": "layer2",
+        "params_changed": false,
+        "bn_stats_changed": true,
+        "num_batches_tracked_changed": true,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": false
+      },
+      {
+        "module": "layer3",
+        "params_changed": false,
+        "bn_stats_changed": true,
+        "num_batches_tracked_changed": true,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": false
+      },
+      {
+        "module": "layer4",
+        "params_changed": false,
+        "bn_stats_changed": true,
+        "num_batches_tracked_changed": true,
+        "expected_params": false,
+        "expected_bn": false,
+        "match": false
+      },
+      {
+        "module": "fc",
+        "params_changed": true,
+        "bn_stats_changed": null,
+        "num_batches_tracked_changed": null,
+        "expected_params": true,
+        "expected_bn": null,
+        "match": true
+      }
+    ],
+    "all_match": false,
+    "layer1.0.bn1_max_abs_change": {
+      "running_mean": 0.08858203887939453,
+      "running_var": 0.14839696884155273,
+      "num_batches_tracked": [
+        0,
+        5
+      ]
+    }
+  }
+}

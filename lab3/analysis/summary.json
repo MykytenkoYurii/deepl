@@ -1,0 +1,124 @@
+{
+  "split_sha256": "d3a611aec41f6e335ab58287f10a443f3e0e35aa9adfefae662d48b15af567f9",
+  "effects": {
+    "F_scratch_1": 0.5358335213775443,
+    "F_frozen_mean": 0.8835646092852786,
+    "R_frozen": 0.005067191101617796,
+    "F_unfreeze_mean": 0.8829844037397713,
+    "R_unfreeze": 0.01916655512479104,
+    "R": 0.01916655512479104,
+    "delta_pre": 0.3477310879077343,
+    "delta_unf": -0.0005802055455073063,
+    "delta_total": 0.347150882362227,
+    "delta_pre_verdict": "вартий перевірки, але не доведений (∣Δ∣ > R)",
+    "delta_unf_verdict": "не відрізняється від розкиду (∣Δ∣ ≤ R)"
+  },
+  "selection": {
+    "regime": "frozen",
+    "seed": 3,
+    "val_macro_f1": 0.8864172614944515,
+    "regime_means": {
+      "scratch": 0.5358335213775443,
+      "frozen": 0.8835646092852786,
+      "unfreeze": 0.8829844037397713
+    },
+    "name": "frozen_seed3",
+    "val_f1_cpu_recomputed": 0.8864172614944515,
+    "val_argmax_agreement": 1.0,
+    "max_abs_logit_diff_cpu_vs_log": 5.036592483520508e-05
+  },
+  "test": {
+    "macro_f1": 0.8892040654693513,
+    "accuracy": 0.8861517976031957,
+    "se": 0.008195626988597764,
+    "n": 1502,
+    "confusion": [
+      [
+        204,
+        1,
+        1,
+        1,
+        1,
+        11
+      ],
+      [
+        0,
+        236,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        207,
+        63,
+        3,
+        2
+      ],
+      [
+        1,
+        0,
+        33,
+        224,
+        5,
+        0
+      ],
+      [
+        3,
+        1,
+        4,
+        5,
+        242,
+        0
+      ],
+      [
+        31,
+        0,
+        0,
+        1,
+        1,
+        218
+      ]
+    ],
+    "test_minus_val": 0.002786803974899721
+  },
+  "five_errors": [
+    {
+      "file": "20179.jpg",
+      "true": "glacier",
+      "pred": "mountain",
+      "prob_pred": 0.919867753982544,
+      "count": 63
+    },
+    {
+      "file": "20116.jpg",
+      "true": "mountain",
+      "pred": "glacier",
+      "prob_pred": 0.5995762944221497,
+      "count": 33
+    },
+    {
+      "file": "20353.jpg",
+      "true": "street",
+      "pred": "buildings",
+      "prob_pred": 0.8639540672302246,
+      "count": 31
+    },
+    {
+      "file": "20752.jpg",
+      "true": "buildings",
+      "pred": "street",
+      "prob_pred": 0.7497073411941528,
+      "count": 11
+    },
+    {
+      "file": "20304.jpg",
+      "true": "mountain",
+      "pred": "sea",
+      "prob_pred": 0.7210631370544434,
+      "count": 5
+    }
+  ]
+}
