@@ -1,0 +1,32 @@
+Середовище: Apple M4 Pro, macOS 27.2 (macOS-27.2-arm64-arm-64bit), Python 3.12.10, PyTorch 2.8.0, ONNX 1.23.2, ONNX Runtime 1.31.1; живлення: Battery Power, powermode 1
+Поділ, train: 1200 зображень, сума імен 11,993,084 — збігається з контролем (1200, 11,993,084)
+Поділ, test: 1502 зображень, сума імен 33,351,444 — збігається з контролем (1502, 33,351,444)
+SHA-256 split.csv: d3a611aec41f6e335ab58287f10a443f3e0e35aa9adfefae662d48b15af567f9 (як у ЛР3)
+Модель: frozen, seed 3, img_size 160, класи ['buildings', 'forest', 'glacier', 'mountain', 'sea', 'street']
+Калібрувальна вибірка: 200 зображень, сума імен 1,921,470, за класами {'buildings': 40, 'forest': 35, 'glacier': 36, 'mountain': 33, 'sea': 29, 'street': 27} — збігається з контролем
+Експорт lab4_fp32.onnx: 0.26 с; вузлів Conv 20, BatchNormalization 0
+
+Діапазони каналів ваг Conv:
+| # | Згортка | Форма ваг | $\max_c\alpha_c$ | $\mathrm{median}_c\,\alpha_c$ | $r$ | $\log_2 r$, біт |
+|---|---|---|---|---|---|---|
+| 1 | **`/conv1/Conv`** | 64×3×7×7 | 0.3939 | 0.0591 | 6.67 | 2.74 |
+| 2 | `/layer1/layer1.0/conv1/Conv` | 64×64×3×3 | 0.3745 | 0.1842 | 2.03 | 1.02 |
+| 3 | `/layer1/layer1.0/conv2/Conv` | 64×64×3×3 | 0.7708 | 0.2639 | 2.92 | 1.55 |
+| 4 | `/layer1/layer1.1/conv1/Conv` | 64×64×3×3 | 0.2800 | 0.1290 | 2.17 | 1.12 |
+| 5 | `/layer1/layer1.1/conv2/Conv` | 64×64×3×3 | 1.0474 | 0.3479 | 3.01 | 1.59 |
+| 6 | `/layer2/layer2.0/conv1/Conv` | 128×64×3×3 | 0.2127 | 0.0828 | 2.57 | 1.36 |
+| 7 | `/layer2/layer2.0/conv2/Conv` | 128×128×3×3 | 0.7242 | 0.2396 | 3.02 | 1.60 |
+| 8 | `/layer2/layer2.0/downsample/downsample.0/Conv` | 128×64×1×1 | 0.6923 | 0.1574 | 4.40 | 2.14 |
+| 9 | `/layer2/layer2.1/conv1/Conv` | 128×128×3×3 | 0.3111 | 0.1386 | 2.24 | 1.17 |
+| 10 | `/layer2/layer2.1/conv2/Conv` | 128×128×3×3 | 0.8771 | 0.2149 | 4.08 | 2.03 |
+| 11 | `/layer3/layer3.0/conv1/Conv` | 256×128×3×3 | 0.2357 | 0.0972 | 2.42 | 1.28 |
+| 12 | `/layer3/layer3.0/conv2/Conv` | 256×256×3×3 | 0.5639 | 0.1502 | 3.76 | 1.91 |
+| 13 | **`/layer3/layer3.0/downsample/downsample.0/Conv`** | 256×128×1×1 | 0.4082 | 0.0830 | 4.92 | 2.30 |
+| 14 | `/layer3/layer3.1/conv1/Conv` | 256×256×3×3 | 0.2724 | 0.0898 | 3.03 | 1.60 |
+| 15 | **`/layer3/layer3.1/conv2/Conv`** | 256×256×3×3 | 0.9701 | 0.1645 | 5.90 | 2.56 |
+| 16 | `/layer4/layer4.0/conv1/Conv` | 512×256×3×3 | 0.3016 | 0.0739 | 4.08 | 2.03 |
+| 17 | `/layer4/layer4.0/conv2/Conv` | 512×512×3×3 | 1.1438 | 0.2743 | 4.17 | 2.06 |
+| 18 | `/layer4/layer4.0/downsample/downsample.0/Conv` | 512×256×1×1 | 0.9982 | 0.2218 | 4.50 | 2.17 |
+| 19 | `/layer4/layer4.1/conv1/Conv` | 512×512×3×3 | 0.2933 | 0.0688 | 4.26 | 2.09 |
+| 20 | `/layer4/layer4.1/conv2/Conv` | 512×512×3×3 | 3.6483 | 1.1639 | 3.13 | 1.65 |
+Три найбільші r: /conv1/Conv (6.67), /layer3/layer3.1/conv2/Conv (5.90), /layer3/layer3.0/downsample/downsample.0/Conv (4.92); медіана r = 3.44, log2 = 1.78 біта
