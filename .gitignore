@@ -231,3 +231,7 @@ lab2/creditcard.csv
 lab3/ЛР3 завдання.pdf
 lab3/archive/
 lab3/runs/*/model.pt
+
+# ЛР4: умова, моделі ONNX (генеруються командою lab4.py)
+lab4/ЛР4 завдання.pdf
+lab4/*.onnx
